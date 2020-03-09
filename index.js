@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const debug = require("debug")("app:server");
 
 const { config } = require('./config/index');
 const moviesApi = require('./routes/movies');
@@ -36,5 +37,5 @@ app.use(wrapErrors);
 app.use(errorHandler);
 
 app.listen(config.port, function () {
-    console.log(`Listening http://localhost:${config.port}`);
+    debug(`Listening http://localhost:${config.port}`);
 });

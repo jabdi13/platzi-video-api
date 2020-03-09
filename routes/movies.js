@@ -73,20 +73,20 @@ const moviesApi = app => {
         }
     });
 
-    router.patch('/:movieId', async (req, res, next) => {
-        const {movieId} = req.params;
-        const {body: movie} = req;
-
-        try {
-            const updatedMovieId = await moviesService.patchMovie({movieId, movie});
-            res.status(200).json({
-                data: updatedMovieId,
-                message: 'movie updated'
-            });
-        } catch (err) {
-            next(err);
-        }
-    });
+    // router.patch('/:movieId', async (req, res, next) => {
+    //     const {movieId} = req.params;
+    //     const {body: movie} = req;
+    //
+    //     try {
+    //         const updatedMovieId = await moviesService.patchMovie({movieId, movie});
+    //         res.status(200).json({
+    //             data: updatedMovieId,
+    //             message: 'movie updated'
+    //         });
+    //     } catch (err) {
+    //         next(err);
+    //     }
+    // });
 
     router.delete('/:movieId', validationHandler({movieId: movieIdSchema}, 'params'), async (req, res, next) => {
         const {movieId} = req.params;
