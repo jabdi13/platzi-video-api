@@ -4,7 +4,8 @@ const moviesMock = [
         "title": "Snake and Crane Arts of Shaolin (She hao ba bu)",
         "cover": "http://dummyimage.com/155x205.png/5fa2dd/ffffff",
         "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
-        "duration": 1913,
+        "year": 2004,
+        "duration": 60,
         "contentRating": "PG-13",
         "source": "http://creativecommons.org/libero/quis/orci/nullam/molestie/nibh.json",
         "tags": [

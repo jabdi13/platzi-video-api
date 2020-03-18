@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
+const helmet = require('helmet');
 const debug = require("debug")("app:server");
 
 const { config } = require('./config/index');
 const moviesApi = require('./routes/movies');
+const userMoviesApi = require('./routes/userMovies');
+const authApi = require('./routes/auth');
 
 const morgan = require('morgan');
 const path = require('path');
@@ -15,6 +18,7 @@ const notFoundHandler = require('./utils/middleware/notFoundHandler');
 
 // body-parser
 app.use(express.json());
+app.use(helmet());
 
 // create a rotating write stream
 const accessLogStream = rfs.createStream('access.log', {
@@ -26,7 +30,9 @@ const accessLogStream = rfs.createStream('access.log', {
 app.use(morgan('combined', { stream: accessLogStream }));
 
 // routes
+authApi(app);
 moviesApi(app);
+userMoviesApi(app);
 
 // Catch 404
 app.use(notFoundHandler);
